@@ -58,7 +58,7 @@ const Hero = () => {
         <div className="rounded-2xl p-6 bg-card/60 backdrop-blur-glass border border-border shadow-lg">
           <img 
             src={specialistImage} 
-            alt="Especialista M2SEC" 
+            alt="Especialista M3SEC" 
             className="w-full h-72 object-cover rounded-xl"
           />
           <div className="mt-6">
