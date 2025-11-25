@@ -15,12 +15,8 @@ const Header = () => {
   return (
     <header className="bg-card shadow-sm sticky top-0 z-50 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="M2SEC logo" className="w-12 h-12 object-contain" />
-          <div>
-            <div className="font-semibold text-lg text-foreground">M2SEC</div>
-            <div className="text-xs text-muted-foreground">Security & Privacy</div>
-          </div>
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="M2SEC logo" className="h-16 w-auto object-contain" />
         </div>
 
         <nav className="hidden md:flex gap-6 items-center text-sm">
