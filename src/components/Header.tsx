@@ -19,7 +19,7 @@ const Header = () => {
           <img src={logo} alt="M3SEC logo" className="w-12 h-12 object-contain" />
           <div>
             <div className="font-semibold text-lg text-foreground">M3SEC</div>
-            <div className="text-xs text-muted-foreground">Security & Privacy</div>
+            <div className="text-xs text-muted-foreground">Segurança & Privacidade</div>
           </div>
         </div>
 

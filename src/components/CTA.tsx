@@ -29,7 +29,7 @@ const CTA = () => {
               onClick={() => scrollToSection("planos")} 
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10"
+              className="font-semibold"
             >
               Ver Planos
             </Button>

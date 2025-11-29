@@ -10,7 +10,7 @@ const Footer = () => {
               <img src={logo} alt="M3SEC logo" className="w-10 h-10 object-contain" />
               <div>
                 <div className="font-semibold text-foreground">M3SEC</div>
-                <div className="text-xs text-muted-foreground">Security & Privacy</div>
+                <div className="text-xs text-muted-foreground">Segurança & Privacidade</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -31,7 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contato</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: contato@m3sec.com</li>
+              <li>Email: atendimento@m3sec.com</li>
               <li>Atendimento nacional</li>
               <li>Seg-Sex: 9h às 18h</li>
             </ul>
