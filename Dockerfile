@@ -1,38 +1,26 @@
-# ---------------------------
-# STAGE 1 — BUILD
-# ---------------------------
-FROM node:22.20.0 AS builder
+iii# Usa Node 22.20.0
+FROM node:22.20.0
 
-# Definir diretório da aplicação
+# Instala git para poder clonar o repositório
+RUN apt-get update && apt-get install -y git && apt-get clean
+
+# Define diretório da aplicação
 WORKDIR /app
 
-# Copiar apenas os manifests para instalar dependências
-COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
+# Clona o repositório
+RUN git clone https://github.com/marleciooliveira/landing_react.git . 
 
-# Instalar dependências conforme o gerenciador (npm como padrão)
+# Instala dependências
 RUN npm install
 
-# Copiar o restante do código
-COPY . .
+# Build para produção (caso seja React puro)
+# Se sua aplicação for um servidor Node, remova esta linha.
+RUN npm run build || echo "Nenhum build necessário para este projeto."
 
-# Gerar build da aplicação (React, Next, Vue, Nest, etc.)
-RUN npm run build
-
-# ---------------------------
-# STAGE 2 — RUNTIME
-# ---------------------------
-FROM node:22.20.0 AS runner
-
-WORKDIR /app
-
-# Copiar apenas o necessário do estágio builder
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/dist ./dist
-
-# Porta (caso sua aplicação exponha alguma)
+# Expõe porta
 EXPOSE 3000
 
-# Comando para iniciar a aplicação
+# Comando de inicialização
+# Ajuste caso o script seja diferente (ex: "start": "node server.js")
 CMD ["npm", "run", "dev"]
 
