@@ -9,7 +9,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["localhost:8080","m3sec.com.br:80"]
+    allowedHosts: ["m3sec.com.br"],
+          cors: {
+        origin: ["https://m3sec.com.br"]
+      }
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
