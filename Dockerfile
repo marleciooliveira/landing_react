@@ -1,5 +1,5 @@
-iii# Usa Node 22.20.0
-FROM node:22.20.0
+# Usa Node 22.20.0
+FROM node:22.16.5
 
 # Instala git para poder clonar o repositório
 RUN apt-get update && apt-get install -y git && apt-get clean
@@ -18,7 +18,7 @@ RUN npm install
 RUN npm run build || echo "Nenhum build necessário para este projeto."
 
 # Expõe porta
-EXPOSE 3000
+EXPOSE 8080
 
 # Comando de inicialização
 # Ajuste caso o script seja diferente (ex: "start": "node server.js")
