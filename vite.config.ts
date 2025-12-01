@@ -8,7 +8,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["m3sec.com.br","lb-m3sec-app-1003636375.sa-east-1.elb.amazonaws.com"] 
+    allowedHosts: ["https://m3sec.com.br/",
+      "lb-m3sec-app-1003636375.sa-east-1.elb.amazonaws.com",
+    "m3sec.com.br"] 
   
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
